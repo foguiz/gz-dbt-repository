@@ -18,13 +18,6 @@ sources:
       - name: sales
         identifier: raw_gz_sales
         description: Sales table organized by date containing products per order asn respective revenue
-        
-        loaded_at_field: "CAST(90 AS TIMESTAMP)"
-        freshness: 
-          warn_after:
-            count: 90
-            period: day
-        
         columns:
           - name: date_date 
             description: date of the order
