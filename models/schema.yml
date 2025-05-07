@@ -49,9 +49,81 @@ sources:
             description: costs per order related to shipping (cash-out)
       - name: adwords
         identifier: raw_gz_adwords
+        description: table containing ads information from the provider adwords
+        columns:
+          - name: date_date
+            description: date value
+            tests:
+              - not_null
+          - name: paid_source
+            description: ads provider
+          - name: campaign_key
+            description: identifier for ads campaing
+          - name: campaign_name
+            description: name of the campaign
+          - name: ads_cost
+            description: costs of the campaign
+          - name: impression
+            description: number of impressions in that day
+          - name: click
+            description: number of clicks in that day
       - name: bing
         identifier: raw_gz_bing
+        description: table containing ads information from the provider bing
+        columns:
+          - name: date_date
+            description: date value
+            tests:
+              - not_null
+          - name: paid_source
+            description: ads provider
+          - name: campaign_key
+            description: identifier for ads campaing
+          - name: campaign_name
+            description: name of the campaign
+          - name: ads_cost
+            description: costs of the campaign
+          - name: impression
+            description: number of impressions in that day
+          - name: click
+            description: number of clicks in that day
       - name: criteo
         identifier: raw_gz_criteo
+        description: table containing ads information from the provider criteo
+        columns:
+          - name: date_date
+            description: date value
+            tests:
+              - not_null
+          - name: paid_source
+            description: ads provider
+          - name: campaign_key
+            description: identifier for ads campaing
+          - name: campaign_name
+            description: name of the campaign
+          - name: ads_cost
+            description: costs of the campaign
+          - name: impression
+            description: number of impressions in that day
+          - name: click
+            description: number of clicks in that day
       - name: facebook
         identifier: raw_gz_facebook
+        description: table containing ads information from the provider facebook
+        columns:
+          - name: date_date
+            description: date value
+            tests:
+              - not_null
+          - name: paid_source
+            description: ads provider
+          - name: campaign_key
+            description: identifier for ads campaing
+          - name: campaign_name
+            description: name of the campaign
+          - name: ads_cost
+            description: costs of the campaign
+          - name: impression
+            description: number of impressions in that day
+          - name: click
+            description: number of clicks in that day

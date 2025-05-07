@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: int_campaigns
+    description: union of all ads cost raw models
+    columns:
+       - name: date_date
+         description: date
+       - name: paid_source
+         description: ads provider
+       - name: campaign_key
+         description: identifier for ads campaing
+         tests:
+          - not_null 
+       - name: campaign_name
+         description: name of the campaign
+       - name: ads_cost
+         description: costs of the campaign
+       - name: impression
+         description: number of impressions in that day
+       - name: click
+         description: number of clicks in that day
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - date_date
+            - campaign_key
+
+  - name: int_campaigns_day
+    description: aggregated model per day for campaing information
+    columns:
+      - name: date_date
+        description: date
+        tests:
+          - unique
+      - name: ads_costs
+        description: aggregated values for ads costs per day
+      - name: ads_impressions
+        description: aggregated values for impressions per day
+      - name: ads_clicks
+        description: aggregated values for clicks per day
+      
