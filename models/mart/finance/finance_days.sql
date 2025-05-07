@@ -12,7 +12,7 @@ select
     ,round(sum(shipping_fee),2) total_shipping_fees
     ,round(sum(log_cost),2) total_log_costs
     ,round(sum(ship_cost),0) ship_cost
-    ,sum(quantity) nb_products_total
+    ,sum(quantity) quantity
 from op_margin
 
 group by date_date
