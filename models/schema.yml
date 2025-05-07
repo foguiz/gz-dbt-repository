@@ -47,7 +47,7 @@ sources:
             description: costs per order realated to logistics (cash-out)
           - name: ship_cost
             description: costs per order related to shipping (cash-out)
-      - name:  adwords
+      - name: adwords
         identifier: raw_gz_adwords
       - name: bing
         identifier: raw_gz_bing
