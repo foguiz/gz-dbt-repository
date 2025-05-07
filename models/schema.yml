@@ -1,0 +1,49 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: gz_raw_data
+    tables:
+      - name: product
+        identifier: raw_gz_product
+        description: product table with information regarding products and respective unity price
+        columns:
+          - name: products_id
+            description: pk
+            tests:
+              - unique
+              - not_null
+          - name: purchase_price
+            description: unity price
+      - name: sales
+        identifier: raw_gz_sales
+        description: Sales table organized by date containing products per order asn respective revenue
+        columns:
+          - name: date_date 
+            description: date of the order
+          - name: orders_id
+            description: id for an order
+          - name: product_id
+            description: id for respective product inside an order
+          - name: revenue
+            description: quantity * purchase price (purchase_price in product table)
+          - name: quantity
+            description: quantity of products in the respective order
+        tests:
+          - unique:
+              column_name: "(orders_id || '-' || pdt_id)"
+      - name: ship
+        identifier: raw_gz_ship
+        description: table contains the shipping fee and respective costs per order
+        columns:
+          - name: orders_id
+            description: pk
+            tests:
+              - unique
+              - not_null
+          - name: shipping_fee
+            description: price paid by customer when ordering (cash-in)
+          - name: log_cost
+            description: costs per order realated to logistics (cash-out)
+          - name: ship_cost
+            description: costs per order related to shipping (cash-out)
