@@ -38,6 +38,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_vbarros:
     # Applies to all files under models/example/
-    marts:
-      finance: 
-        +materialized: table
+    mart:     
+      +materialized: table
+      finance:
+        +schema: finance
