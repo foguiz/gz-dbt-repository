@@ -39,4 +39,39 @@ models:
         description: aggregated values for impressions per day
       - name: ads_clicks
         description: aggregated values for clicks per day
-      
+
+  - name: finance_days
+    description: aggregation of related sales information (cash-in and cash-out) per day
+  - name: finance_campaigns_day
+    description: aggregation of finance model 'finance_days' with int_campaigns_day per day
+    columns:
+      - name: date_date
+        description: date
+        tests:
+          - unique  
+      - name: ads_margin
+        description: operational margin minus the ads costs
+      - name: average_basket
+        description: average price for an order
+      - name: operational_margin
+        description: sum of cash in (revenue and shipping fee) minus cash-out (purchase costs, log costs and shipping costs)
+      - name: ads_cost
+        description: sum of ads costs for different partners in that day
+      - name: ads_impression
+        description: sum of impressions on that day
+      - name: ads_clicks
+        description: sum of clicks on that day
+      - name: quantity
+        description: quantity of products sold that day
+      - name: revenue
+        description: sum of revenue on that day
+      - name: purchase_cost
+        description: sum of costs with purchase on that day
+      - name: margin
+        description: revenue minus purchase cost
+      - name: shipping_fee
+        description: sum of shipping fees on that day
+      - name: logcost
+        description: sum of logistic costs on that day
+      - name: ship_cost
+        description: sum of shipping costs on that day
