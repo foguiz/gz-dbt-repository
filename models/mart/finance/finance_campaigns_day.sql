@@ -10,7 +10,7 @@ select
     ,campaign.ads_cost
     ,campaign.ads_impressions
     ,campaign.ads_clicks
-    ,finance.nb_products_total quantity
+    ,finance.quantity quantity
     ,finance.revenue
     ,finance.total_purchase_cost purchase_cost
     ,finance.margin
